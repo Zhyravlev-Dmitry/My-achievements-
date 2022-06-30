@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brython Clicker</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js">
+    </script>
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython_stdlib.js">
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <style>
+        h1 {
+            margin-top: 5%;
+            color: black;
+        }
+
+        text_style_2 {
+            color: black;
+            font-size: 18px !important;
+        }
+
+        text_style_1 {
+            color: black;
+        }
+
+        button {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: transparent !important;
+            border-color: black !important;
+            color: black !important;
+            font-size: 22px !important;
+            padding: 3px !important;
+        }
+
+        button:hover {
+            border-color: red !important;
+        }
+
+        body {
+            background-color: plum;
+        }
+
+    </style>
+
+</head>
+
+<body onload="brython()">
+
+<h1 class="text-center">Rat race in web <a href="https://brython.info"></a></h1><br>
+<div style="margin: 0px 0px 0px 700px; display:block;">
+    <button id="victory" class="btn btn-info">Victory: 10 000</button>
+    <button id="reset" class="btn btn-info"> reset</button>
+</div>
+<div style="margin: 20px 0px 0px 500px; display:block;">
+    <text_style_2 id="capital" class="text-center">Capital: 0</text_style_2>
+    <br>
+    <text_style_2 id="profit" class="text-center">Profit: +10 / click</text_style_2>
+    <br>
+</div>
+<div style="margin: 0px 0px 0px 1000px; display:block;">
+    <button id="btn_click_add_1" class="btn btn-info"><img src="shop1.png"></button>
+    <text_style_1 class="text-center">Cost: 50, max click: +10</text_style_1>
+    <br>
+    <button id="btn_click_add_2" class="btn btn-info"><img src="shop2.png"></button>
+    <text_style_1 class="text-center">Cost: 150, max click: +50</text_style_1>
+    <br>
+</div>
+
+<script type="text/python">
+
+    from browser import document, html, window
+
+    score = 0
+    addition = 10
+
+    def update_score(new_score):
+        global score
+        score = new_score
+        document["capital"].innerHTML = "Capital: " + str(new_score)
+
+    def update_profit(new_profit):
+        global addition
+        addition = new_profit
+        document["profit"].innerHTML = "Profit: +" + str(new_profit) + " / click"
+
+    def reset():
+        update_score(0)
+        update_profit(10)
+
+    def reset_event(evt):
+        reset()
+
+    def key_push(evt):
+        key = evt.keyCode
+        if key == 86:
+            winner()
+        elif key == 82:
+            reset()
+        elif key == 49:
+            click(add=10, cost=50)
+        elif key == 50:
+            click(add=50, cost=150)
+        elif key == 32:
+            global score, addition
+            update_score(score + addition)
+
+    def show_winner(evt):
+        winner()
+
+    def winner():
+        global score
+        if score >= 10000:
+            reset()
+            window.alert("You are winner!")
+        else:
+            window.alert("Not enough money :(")
+
+    def click_50_cost(evt):
+        click(add=10, cost=50)
+
+    def click_150_cost(evt):
+        click(add=50, cost=150)
+
+    def click(add, cost):
+        global score, addition
+        if score >= cost:
+            score -= cost
+            addition += add
+        update_score(score)
+        update_profit(addition)
+
+    document.addEventListener("keydown", key_push)
+    victory_btn = document["victory"]
+    victory_btn.addEventListener("mousedown", show_winner)
+    reset_btn = document["reset"]
+    reset_btn.addEventListener("mousedown", reset_event)
+    btn_click_add_1 = document["btn_click_add_1"]
+    btn_click_add_1.addEventListener("mousedown", click_50_cost)
+    btn_click_add_2 = document["btn_click_add_2"]
+    btn_click_add_2.addEventListener("mousedown", click_150_cost)
+
+
+</script>
+
+</body>
+
+</html>

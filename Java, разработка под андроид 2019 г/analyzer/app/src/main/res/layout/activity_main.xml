@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextClock
+        android:id="@+id/textClock1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:format24Hour="h:mmaa \n EE, dd MMM"
+        android:text="TextClock"
+        android:gravity="center"
+        android:layout_marginBottom="6dp"
+        android:textSize="30sp"
+        tools:ignore="UnknownId" /> <!-- виджет время-дата -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="#FF0000" /> <!--декоративная полоса -->
+
+    <LinearLayout
+        android:id="@+id/mainLinearLayout_11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/mainCheckBox_11"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"/>
+        <TextView
+            android:id="@+id/mainTextView_12"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:text="2345678987654321"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/mainLinearLayout_12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/mainEditText_13"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="15sp"
+            android:hint="% вып." />
+        <TextView
+            android:id="@+id/mainTextView_14"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="12345678765432"
+            android:textSize="15sp" />
+        <EditText
+            android:id="@+id/mainEditText_15"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="15sp"
+            android:hint="(мин)" />
+
+    </LinearLayout><!-- строка расписания 1 -->
+
+    <LinearLayout
+        android:id="@+id/mainLinearLayout_21"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/mainCheckBox_21"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp" />
+        <TextView
+            android:id="@+id/mainTextView_22"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:text="2345678987654321"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/mainLinearLayout_22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/mainEditText_23"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="15sp"
+            android:hint="% вып." />
+        <TextView
+            android:id="@+id/mainTextView_24"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:text="12345678765432"
+            android:textSize="15sp" />
+        <EditText
+            android:id="@+id/mainEditText_25"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="15sp"
+            android:hint="(мин)" />
+
+    </LinearLayout><!-- строка расписания 2 -->
+
+    <TextView
+        android:id="@+id/sobitie_1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#222222"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"  />
+    <TextView
+        android:id="@+id/sobitie_2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#222222"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView" /><!-- Вопросы текущих событий -->
+
+    <Button
+        android:id="@+id/ezh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Ежедневник" /> <!-- Кнопка ежедневника -->
+    <Button
+        android:id="@+id/an"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Анализатор" /> <!-- Кнопка анализатора -->
+
+
+</LinearLayout>

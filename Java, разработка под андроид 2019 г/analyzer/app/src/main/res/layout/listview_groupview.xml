@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="28dp"
+    android:layout_marginBottom="4dp"
+    android:paddingTop="4dp">
+
+    <TextView
+        android:id="@+id/listNomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="20dp"
+        android:paddingStart="4dp"
+        android:textColor="@color/text"/>
+    <TextView
+        android:id="@+id/listName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="12"
+        android:textSize="22dp"
+        android:textColor="@color/text"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/listTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:textSize="20dp"
+        android:textColor="@color/text" />
+    <TextView
+        android:id="@+id/listVes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="22dp"
+        android:textColor="@color/text" />
+</LinearLayout> <!-- разметка значка дневного плана -->

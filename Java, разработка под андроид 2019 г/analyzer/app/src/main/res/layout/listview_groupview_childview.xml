@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/listOpisanie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="32"
+        android:paddingTop="4dp"
+        android:paddingStart="4dp"
+        android:textSize="18dp"
+        android:textColor="@color/text"
+        android:text="Описание отсутствует"/>
+    <TextView
+        android:id="@+id/listFlag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:paddingEnd="4dp"
+        android:textSize="20dp"
+        android:gravity="end"
+        android:text="Не сделано"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp">
+        <EditText
+            android:id="@+id/listPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:hint="% вып."
+            android:textSize="16dp"/>
+        <EditText
+            android:id="@+id/listBall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:hint="исходный балл"
+            android:textSize="16dp"/>
+        <EditText
+            android:id="@+id/listRasVrem"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:hint="затраченное время"
+            android:textSize="16dp"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/listComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:textSize="18dp"
+        android:text="Комментарий"
+        android:layout_marginBottom="4dp"/>
+</LinearLayout> <!-- разметка описания дневного плана -->
